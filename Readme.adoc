@@ -1,5 +1,5 @@
 
-For setting CDP environment on AWS, please click on xref:AWS/Readme.adoc[AWS]. 
+For setting CDP Public Cloud environment on AWS, please click on xref:AWS/Readme.adoc[AWS]. 
 
-For setting CDP environment on Azure, please click on xref:Azure/Readme.adoc[Azure]. 
+For setting CDP Public Cloud environment on Azure, please click on xref:Azure/Readme.adoc[Azure]. 
 
