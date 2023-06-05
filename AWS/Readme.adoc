@@ -20,11 +20,11 @@ toc::[]
 
 == Prerequisites
 
-==== Access to a CDP tenant with PowerUser access
+==== 1. Access to a CDP tenant with PowerUser access
 
-==== Access to the AWS account with administrator access.
+==== 2. Access to the AWS account with administrator access.
 
-==== Docker
+==== 3. Docker
 
 Install Docker on your system and ensure that it is running. 
 
@@ -32,3 +32,55 @@ Install Docker on your system and ensure that it is running.
 
 ===== https://docs.docker.com/desktop/install/windows-install/[Windows]
 
+== Execution steps
+
+=== If you are on Windows, you can choose terminal or GitBash as the application to run the docker commands. 
+=== Ensure that *docker* is added in your PATH variable. 
+
+==== 1. Open the terminal/iTerm and run the below command. The image should get pulled successfully. 
+[.shell]
+----
+docker pull pannagk/cdp_setup_on_aws:v1
+---- 
+
+==== 2. Verify the same by running the below command. You should see the image *pannagk/cdp_setup_on_aws:v1* in the output. 
+[.shell]
+----
+docker images
+----
+
+==== 3. Create a new folder for keeping the parameters file. Note down the complete path of this folder. 
+
+==== 4. Create a parameters file with the below content. The name of this file should be *setup_params.sh*. 
+Warning: Failing to set the file name to setup_params.sh will result in failure of the execution. Note that, the file extension should be *.sh* and not *.sh.txt* .
+[.shell]
+----
+#!/bin/bash
+#Enter the values without any quotes and trailing/leading spaces.
+#Enter a prefix to identify the resources in aws and on cdp.
+prefix=cdp-poc
+
+cdp_access_key_id=Enter CDP Access Key ID here
+cdp_private_key=Enter CDP Private Key here
+
+aws_access_key_id=Enter your AWS Access Key ID here
+aws_secret_access_key=Enter your AWS Secret Access Key here
+aws_region=Enter the AWS region in which you want to deploy the resources
+
+#Let this remain as it is unless informed to be changed by the Cloudera POC
+cdp_runtime=7.2.16 
+----
+
+==== 5. Run the below command to start the execution of the script. 
+[.shell]
+----
+docker run -v ENTER_THE_FULL_PATH_OF_THE_DIRECTORY_WHERE_THE_PARAMETER_FILE_IS_PRESENT:/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
+----
+
+==== 6. Please note that if you are on Windows, the command would get changed slightly as shown below. 
+[.shell]
+----
+docker run -v "<drive_name>:<path_to_setup_params.sh>":/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
+----
+
+==== 7. Once the script execution starts, you can monitor the progress with the messages shown on the prompt itself. If there is any failure, the aws resources would get cleaned up. 
