@@ -52,7 +52,9 @@ docker images
 ==== 3. Create a new folder for keeping the parameters file. Note down the complete path of this folder. 
 
 ==== 4. Create a parameters file with the below content. The name of this file should be *setup_params.sh*. 
-Warning: Failing to set the file name to setup_params.sh will result in failure of the execution. Note that, the file extension should be *.sh* and not *.sh.txt* .
+
+WARNING: Failing to set the file name to setup_params.sh will result in failure of the execution. Note that, the file extension should be *.sh* and not *.sh.txt* .
+
 [.shell]
 ----
 #!/bin/bash
