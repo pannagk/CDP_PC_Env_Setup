@@ -1,1 +1,34 @@
+= CDP Public Cloud Environment Setup on AWS
+
+Author: *Pannag Katti*
+
+
+:page-layout: docs
+:description: CDP Public Cloud on Azure
+:imagesdir: ./images
+:icons: font
+:toc:
+:toc-placement!:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+toc::[]
+
+
+== Prerequisites
+
+==== Access to a CDP tenant with PowerUser access
+
+==== Access to the AWS account with administrator access.
+
+==== Docker
+
+Install Docker on your system and ensure that it is running. 
+
+===== https://docs.docker.com/desktop/install/mac-install/[Mac]
+
+===== https://docs.docker.com/desktop/install/windows-install/[Windows]
 
