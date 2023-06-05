@@ -79,10 +79,12 @@ cdp_runtime=7.2.16
 docker run -v ENTER_THE_FULL_PATH_OF_THE_DIRECTORY_WHERE_THE_PARAMETER_FILE_IS_PRESENT:/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
 ----
 
+NOTE: The value after -v is the full path of the folder in which *setup_params.sh* file is present. 
+
 ==== 6. Please note that if you are on Windows, the command would get changed slightly as shown below. 
 [.shell]
 ----
-docker run -v "<drive_name>:<path_to_setup_params.sh>":/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
+docker run -v "<drive_name>:<directory path containing setup_params.sh>":/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
 ----
 
 ==== 7. Once the script execution starts, you can monitor the progress with the messages shown on the prompt itself. If there is any failure, the aws resources would get cleaned up. 
