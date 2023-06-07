@@ -53,8 +53,7 @@ docker images
 
 ==== 4. Download the parameters file from this https://github.com/pannagk/CDP_PC_Env_Setup/blob/main/AWS/setup_params.sh[link].
 
-==== 5. Create a parameters file with the below content. The name of this file should be *setup_params.sh*. 
-You can download the file present in this repo as well. 
+==== 5. Open the downloaded parameters file and update all the required values. Do not change the name of this file. 
 
 WARNING: Failing to set the file name to setup_params.sh will result in failure of the execution. Note that, the file extension should be *.sh* and not *.sh.txt* .
 
