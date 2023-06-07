@@ -51,7 +51,9 @@ docker images
 
 ==== 3. Create a new folder for keeping the parameters file. Note down the complete path of this folder. 
 
-==== 4. Create a parameters file with the below content. The name of this file should be *setup_params.sh*. 
+==== 4. Download the parameters file from this https://github.com/pannagk/CDP_PC_Env_Setup/blob/main/AWS/setup_params.sh[link].
+
+==== 5. Create a parameters file with the below content. The name of this file should be *setup_params.sh*. 
 You can download the file present in this repo as well. 
 
 WARNING: Failing to set the file name to setup_params.sh will result in failure of the execution. Note that, the file extension should be *.sh* and not *.sh.txt* .
@@ -74,7 +76,7 @@ aws_region=Enter the AWS region in which you want to deploy the resources
 cdp_runtime=7.2.16 
 ----
 
-==== 5. Run the below command to start the execution of the script. 
+==== 6. Run the below command to start the execution of the script. 
 [.shell]
 ----
 docker run -v ENTER_THE_FULL_PATH_OF_THE_DIRECTORY_WHERE_THE_PARAMETER_FILE_IS_PRESENT:/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
@@ -82,10 +84,10 @@ docker run -v ENTER_THE_FULL_PATH_OF_THE_DIRECTORY_WHERE_THE_PARAMETER_FILE_IS_P
 
 NOTE: The value after -v is the full path of the folder in which *setup_params.sh* file is present. 
 
-==== 6. Please note that if you are on Windows, the command would get changed slightly as shown below. 
+==== 7. Please note that if you are on Windows, the command would get changed slightly as shown below. 
 [.shell]
 ----
 docker run -v "<drive_name>:<directory path containing setup_params.sh>":/cdp-on-aws/parameters -it pannagk/cdp_setup_on_aws:v1 create
 ----
 
-==== 7. Once the script execution starts, you can monitor the progress with the messages shown on the prompt itself. If there is any failure, the aws resources would get cleaned up. 
+==== 8. Once the script execution starts, you can monitor the progress with the messages shown on the prompt itself. If there is any failure, the aws resources would get cleaned up. 
